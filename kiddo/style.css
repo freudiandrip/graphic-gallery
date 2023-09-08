@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+:root {
+  --background: #f4f1e9;
+  --main-color: #746f61;
+  --placeholder: #b4b0a4;
+  --male: #ff8a00;
+  --female: #00d400;
+  --pg-width: 960px;
+}
+
+body {
+	font-family: Fredoka One, Comic Sans;
+	font-size: 18px;
+	line-height: 1.5;
+	
+	background-color: var(--background);
+	color: var(--main-color);
+	margin: 48px auto;
+	width: var(--pg-width);
+}
+
+header {
+	text-align: center;
+  margin-bottom: 24px;
+}
+
+form {
+  text-align: center;
+  padding: 24px;
+  border-top: 2px solid var(--placeholder);
+  border-bottom: 2px solid var(--placeholder);
+}
+
+input {
+  margin-top: 16px;
+  padding: 8px 16px;
+  width: 480px;
+  color: var(--main);
+}
+
+input::placeholder {
+  color: var(--placeholder);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+span.name {
+	font-weight: 700;
+}
+
+/* SPAN IS INLINE TAG - WIDTH / HEIGHT IS BASED ON CONTENT (unless specified) */
+div.index span.male {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  background-color: var(--male);
+}
+
+div.index span.female {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  background-color: var(--female);
+  margin-left: 12px;
+}
+
+/* stroke docs: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap */
+/* mix-blend-mode docs: https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode (kinda like ADOBE blending effects)*/
+path {
+  fill: none;
+}
+
+path.domain {
+  stroke-width: 2px;
+}
+
+path.male {
+  stroke: var(--male);
+  stroke-width: 12px;
+  stroke-linecap: round;
+  mix-blend-mode: multiply;
+}
+
+path.female {
+ 	stroke: var(--female);
+  stroke-width: 12px;
+  stroke-linecap: round;
+  mix-blend-mode: multiply;
+}
+
+text {
+  font-family: Fredoka One, Comic Sans;
+  font-size: 12px;
+}

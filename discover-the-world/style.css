@@ -1,0 +1,85 @@
+:root {
+  --bg-color: #fff9f9;
+  --primary-color: #ff0000;
+}
+
+body {
+	font-family: Work Sans;
+	font-size: 16px;
+	line-height: 1.5;
+	
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+	margin: 64px auto 64px auto;
+	width: 90vw;
+  text-align: center;
+}
+
+h1 {
+	margin-bottom: 48px;
+}
+
+span {
+  margin: 0 8px;
+}
+
+/* for defining group associated elements we need to include g.CLASSNAME */ 
+g.city circle {
+  fill: var(--primary-color);
+  stroke: var(--bg-color);
+  stroke-width: 2.5px;
+}
+
+g.city rect {
+  fill: var(--primary-color);
+  opacity: 0;
+ 	transition: opacity 0.25s ease;
+}
+
+g.city text {
+  fill: var(--bg-color);
+  font-size: 14px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  opacity: 0;
+ 	transition: opacity 0.25s ease;
+}
+
+line {
+  stroke-width: 1px;
+  stroke-dasharray: 2 8;
+}
+
+path.domain {
+  stroke-width: 2.5px;
+}
+
+text.x-label, 
+text.y-label {
+  fill: var(--primary-color);
+  font-size: 24px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+g.city:hover rect,
+g.city:hover text {
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  body {
+    margin: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

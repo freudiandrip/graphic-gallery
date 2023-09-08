@@ -1,0 +1,120 @@
+@font-face {
+	font-family: Mohave;
+  src: url(mohave-light.woff2), url(mohave-light.woff);
+}
+
+@font-face {
+  font-family: Mohave Bold;
+  font-weight: 700;
+  src: url(mohave-bold.woff2), url(mohave-bold.woff);
+}
+
+:root {
+  --bg-color: #272727;
+  --text-color: #ffffff;
+  --subtext-color: #eeeeee;
+}
+
+body {
+	font-family: Mohave;
+	font-size: 16px;
+	line-height: 1.25;
+	
+	background-color: var(--bg-color);
+	color: var(--text-color);
+  margin: 160px auto 80px auto;
+  width: 78vw;
+}
+
+header {
+  background-color: rgba(39, 39, 39, 0.25);
+  width: 100vw;
+  padding: 24px 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+header select {
+  height: max-content;
+  padding: 4px 4px;
+}
+
+h1 {
+  font-family:  Mohave Bold;
+	font-size: 24px;
+	font-weight: 700;
+  padding-left: 16px;
+}
+
+/* SVG text elements are defined by svg properties LIKE FILL */
+text {
+  fill: var(--text-color);
+  text-anchor: end;
+}
+
+text.city {
+  font-family: Mohave Bold;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+text.country {
+  fill: var(--subtext-color);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+text.temperature {
+  font-family: Mohave Bold;
+  font-size: 18px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  
+  opacity:  0;
+  transition: opacity 0.25s ease;
+}
+
+circle {
+  fill: var(--text-color);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+path {
+  stroke: var(--text-color);
+  stroke-width: 4px;
+  fill: none;
+  
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* interaction with the group elements creates a transition hover effect for displaying temperatures and hiding the path */
+g:hover circle,
+g:hover text.temperature {
+  opacity: 1;
+}
+
+g:hover path {
+  opacity: 0;
+}
+
+@media all and (max-width: 572px) {
+  h1 {
+    font-size: 16px;
+  }
+}

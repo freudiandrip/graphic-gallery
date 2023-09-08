@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+:root {
+  --background: #ffffd0;
+  --black: #111118;
+  --IMDb: #e4160d;
+  --metascore: #177a7d;
+  --highlight: rgba(0, 0, 0, 0.05);
+}
+
+body {
+	font-family: Space Mono;
+	font-size: 18px;
+	line-height: 1.5;
+	
+	background-color: var(--background);
+	color: var(--black);
+	margin: 40px auto 40px auto;
+	width: 960px;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+header {
+  background-color: var(--background);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  
+  border-bottom: 3px solid var(--black);
+  
+/* sticky positioning becomes fixed when scrolled out of view, fixing itself to the desired position (in this case at top: 0) */
+  position: sticky;
+  top: 0;
+}
+
+select.sort-by {
+  text-align: center;
+}
+
+span {
+  margin: 0 10px 0 0;
+}
+
+span.container {
+  display: flex;
+  flex-direction: row;
+}
+
+span.imdb {
+  color: var(--IMDb);
+}
+
+span.metascore {
+  color: var(--metascore);
+}
+
+select.sort-by {
+  text-align: center;
+}
+
+g.movie text {
+  dominant-baseline: middle;
+}
+
+text.title {
+  font-family: Space Mono;
+  font-weight: 700;
+}
+
+circle.imdb-score {
+  fill: var(--IMDb);
+}
+
+circle.metascore-score {
+  fill: var(--metascore);
+}
+
+rect.item-bg {
+  fill: var(--highlight);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+g.movie:hover rect.item-bg {
+  opacity: 1;
+}
+
+path.imdb-path {
+  fill: none;
+  stroke: var(--IMDb);
+  stroke-width: 4px;
+}
+
+path.metascore-path {
+  fill: none;
+  stroke: var(--metascore);
+  stroke-width: 4px;
+}
+
+path.graph-area {
+  fill: var(--highlight);
+}
+
+text.imdb {
+  fill: var(--IMDb);
+  font-size: 12px;
+}
+
+text.metascore {
+  fill: var(--metascore);
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 16px;
+    width: auto;
+    margin: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+    width: auto;
+    margin: 24px;
+  }
+  
+  form.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}

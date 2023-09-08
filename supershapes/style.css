@@ -1,0 +1,124 @@
+/* shifting origin of div containing SVG children to the center vs top left of div (default) - origin is where all transform related animations will take place */
+.tunnel circle,
+.crosshairs path,
+.squares rect {
+  transform-origin: center;
+}
+
+/* manual div class to maintain div width as 200% */
+.w-200 {
+  width: 200%;
+}
+
+.bg-blue{
+  background-color: #7CEBFC;
+}
+
+.bg-purple {
+  background-color: #CA8CF9;
+}
+
+.bg-yellow {
+  background-color: #FFF44C;
+}
+
+.bg-red {
+  background-color: #F9343D;
+}
+
+.box-stroke {
+	/* inset sets the border stroke on the inside of shape, 0 x 0 y 0 blur 4px spread which is the border diameter with a black stroke*/
+	/* see more at https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
+  box-shadow: inset 0 0 0 4px #000000;
+}
+
+/* manually adding border styles to page to get the border a consistent size / shape */
+/* added an overflow hidden class so only really need the left and right with relative positioning */
+.page-border {
+  border-left:  solid 4px #000000;
+  border-right:   solid 4px #000000;
+  position: relative;
+}
+
+/* psuedo elements allow for the insertion of extra elements before and after the entire page content container for styling purposes - in this case we are adding the extra borders at the top and bottom of the page to keep it consistent with the rest of the border styles */
+/* see: https://css-tricks.com/almanac/selectors/a/after-and-before/ for more on ::before, ::after pseudo elements*/
+.page::after,
+.page::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #000000;
+  z-index: 3;
+}
+
+.page::before {
+  top: 0;
+}
+
+.page::after {
+  top: 99vh;
+}
+
+/* adding a full border class offsets the stroke by 4px so it needs to be manually added to only the left and right*/
+.conveyor-belt {
+  border-left: solid 4px #000000;
+  border-right:  solid 4px #000000;
+}
+
+.pixel {
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
+  /* rounding edges with border radius @ 50% creates circle*/
+  /* OR just use the br-100 tachyons class for the same border-radius effect*/
+  /* border-radius: 50%; */
+}
+
+/* positioning styling - by setting transform-box to fill-box, the squares will be centered at the middle where the translation is applied (to force transform-origin center which for some reason doesn't work on its own for the square tunnel) */
+/* More at https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box */
+/* transform: translate(-50%, -50%) will be offset to the center */
+.squares rect{
+  transform: translate(-50%, -50%);
+  transform-box: fill-box;
+}
+
+#play,
+#pause {
+  fill: #000000;
+  stroke: none;
+	/* "all" in transition style parameter will animate all styles (here: stroke, fill) */
+  transition: all 0.25s linear;
+}
+
+#play:hover{
+  fill: #47ca5c;
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+#pause:hover {
+  fill: #ff9a5a;
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="generator" content="SuperHi">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>[D3DataViz]KiddoKiddo</title>
+		<link rel="stylesheet" href="/_base.css">
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+		<script src="/superhi.js"></script>
+		<header>
+		  <h1>
+		    <img src="kiddo-logo.svg">
+		  </h1>
+		</header>
+		
+		<form>
+		  <h2>Still unsure on a name for your little one?</h2>
+		  <h3>Search our popularity graph below.</h3>
+		  <input type="text" name="name" placeholder="Search for a name (i.e.: Kim)" autocomplete="off">
+		</form>
+		
+		<section>
+			<nav>
+		    <div>
+		      Results for: <span class="name"></span>
+		    </div>
+		    <div class="index">
+		      <span class="male"></span> Male 
+		      <span class="female"></span> Female
+		    </div>
+		  </nav>
+		  <svg></svg>
+		</section>
+		
+		<script src="d3.min.js"></script>
+		<script src="data.min.js"></script>
+		<script src="kiddo.js"></script>
+		
+		
+		
+	</body>
+</html>
