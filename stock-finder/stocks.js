@@ -4,9 +4,9 @@ const svg = d3.select('svg')
 svg.attr('viewBox', '0 0 960 320')
 
 // API
-const url = 'https://api.superhi.com/api/stocks/aapl'
+// const url = 'https://api.superhi.com/api/stocks/aapl'
 // static file
-// const url = "1y.json"
+const url = "1y.json"
 
 d3.json(url).then(function (data) {
   // refer for docs: https://github.com/d3/d3-time-format#locale_format
